@@ -32,7 +32,7 @@ class SearchUser extends React.Component {
                     <input type='text' name='loginName' value={this.state.loginName} onChange={this.updateField} />
                     <button>Go!</button>
                 </form>
-                <UserList />
+                <UserList theUser={this.props.passedUser} theFollowers={this.props.passedFollowers} />
             </div>
         );
     }
