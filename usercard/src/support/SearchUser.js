@@ -2,6 +2,34 @@ import React from 'react';
 
 import UserList from './UserList';
 
+const searchStyle = function() {
+    return {
+        div: {
+            margin: '20px 0'
+        },
+
+        label: {
+            color: 'red',
+            fontWeight: 'bold'
+        },
+
+        input: {
+            background: 'black',
+            color: 'white',
+            border: '1px solid red',
+            borderRadius: '5px',
+            margin: '5px'
+        },
+
+        btn: {
+            color: '#00FF00',
+            background: 'inherit',
+            border: '2px solid teal',
+            borderRadius: '5px'
+        }
+    };
+};
+
 class SearchUser extends React.Component {
     constructor(props) {
         super(props);
@@ -26,11 +54,11 @@ class SearchUser extends React.Component {
         console.log('Passed User is: ', this.props.passedUser);
         console.log('Passed Followers are: ', this.props.passedFollowers);
         return (
-            <div>
+            <div style={searchStyle().div}>
                 <form onSubmit={this.submitSearch}>
-                    <label>Search Username:&nbsp;</label>
-                    <input type='text' name='loginName' value={this.state.loginName} onChange={this.updateField} />
-                    <button>Go!</button>
+                    <label style={searchStyle().label}>Search Username:</label>
+                    <input type='text' style={searchStyle().input} name='loginName' value={this.state.loginName} onChange={this.updateField} />
+                    <button style={searchStyle().btn}>Go!</button>
                 </form>
                 <UserList theUser={this.props.passedUser} theFollowers={this.props.passedFollowers} />
             </div>

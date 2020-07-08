@@ -25,7 +25,7 @@ class App extends React.Component {
 
     //I was unable to get multiple axios.get() calls to work without errors
     //Modified the below axios call from info found here: https://www.storyblok.com/tp/how-to-send-multiple-requests-using-axios
-    axios.all([axios.get('https://api.github.com/users/alphaseinor'), axios.get('https://api.github.com/users/alphaseinor/followers')])
+    axios.all([axios.get('https://api.github.com/users/numbers0580'), axios.get('https://api.github.com/users/numbers0580/followers')])
       .then(axios.spread((...fetches) => {
         this.setState({userData: fetches[0].data});
         this.setState({userFollowers: fetches[1].data});

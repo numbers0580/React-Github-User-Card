@@ -14,7 +14,7 @@ function Header() {
                 alignItems: 'center'
             },
             title: {
-                color: 'silver'
+                color: 'silver',
             },
             navContainer: {
                 display: 'flex',
@@ -36,10 +36,11 @@ function Header() {
 
     return (
         <header style={styler().main}>
-            <h1 style={styler().title}>Github User Card v2</h1>
+            <h1 className='outline' style={styler().title}>Github User Card v2</h1>
             <nav style={styler().navContainer}>
                 <Link to='/usersearch'><button style={styler().btnLinks}>Username Search</button></Link>
                 <Link to='/idsearch'><button style={styler().btnLinks}>ID Search</button></Link>
+                <Link to='/'><button style={styler().btnLinks}>Clear Page</button></Link>
             </nav>
         </header>
     );
